@@ -14,9 +14,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    @current_user.regenerate_auth_token
-    if @current_user.save
-      head :no_content
+    token = @current_user.regenerate_auth_token
+    @current_user.update_column(:token, token)
+    if token
+      render json: {success: true}
     else
       render json: @current_user.errors, status: :unprocessable_entity
     end
