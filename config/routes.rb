@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post 'dares/create' => 'dares#create'
   get 'dares/:id' => 'dares#show'
 
+  post 'dares/:id/claim' => 'dares#claim'
+  post 'dares/:id/finish' => 'dares#finish'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

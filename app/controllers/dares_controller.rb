@@ -13,8 +13,21 @@ class DaresController < ApplicationController
 
   def show
     d = Dare.find(params[:id])
+    sum = "%05.2f" % d.payments.sum(:amount).to_f  #String of amount with two decimal places
     render json: d.as_json(include: :payments)
   end
 
+  def claim
+    d = Dare.find(params[:id])
+    d.update_column(:claimed_by, @current_user.id)
+    d.update_column(:locked, true)
+    render json: {status: :success}
+  end
+
+  def finish
+    d = Dare.find(params[:id])
+    d.update_column(:finished, true)
+    render json: {status: :success}
+  end
 
 end

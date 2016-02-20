@@ -18,6 +18,8 @@ gem 'pg'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'httparty'
+
 group :development, :test do
   gem 'rspec-rails'
 end
