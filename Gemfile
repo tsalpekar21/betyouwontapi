@@ -18,6 +18,17 @@ gem 'pg'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'minitest'
+  gem 'shoulda-matchers'
+  gem 'fuubar'
+  gem 'database_cleaner'
+end 
 
 
 # To use ActiveModel has_secure_password
