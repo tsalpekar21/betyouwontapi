@@ -29,5 +29,9 @@ class DaresController < ApplicationController
     render json: {status: :success, amount: d.total_amount}
   end
 
+  def all
+    d = Dare.order('created_at').where(finished: false).all#, order: "created_at DESC", conditions: {finished: false})
+    render json: d
+  end
   
 end
