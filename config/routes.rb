@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'users/create' => 'users#create'
   get 'users/:id' => 'users#show'
   get 'users/payments' => 'users#payments'
+  put 'users/:id' => 'users#update'
 
   post '/payments/create' => 'payments#create'
 
