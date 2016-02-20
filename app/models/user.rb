@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   before_save { email.downcase!}
   
   validates :email, uniqueness: true
+  validates :email, presence: true
+  validates :name, presence: true
+  validates :password, presence: true
+
   has_secure_password
 
   def generate_token
