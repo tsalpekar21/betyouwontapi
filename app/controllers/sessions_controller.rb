@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
     u = User.find_by(email: params[:email])
 
    if u && u.authenticate(params[:password])
-     u.regenerate_auth_token
-     u.save
+     token = u.regenerate_auth_token
+     u.update_column(:token, token)
      render json: {email: u.email, token: u.token, name: u.name}
     else
       render json: {error: "Login credentials are invalid"}, status: :unauthorized
