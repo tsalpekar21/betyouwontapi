@@ -13,7 +13,7 @@ class DaresController < ApplicationController
 
   def show
     d = Dare.find(params[:id])
-    render json: {dare: d, payments: d.payments}
+    render json: d.as_json(include: :payments)
   end
 
 
