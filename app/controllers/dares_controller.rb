@@ -31,7 +31,7 @@ class DaresController < ApplicationController
 
   def all
     d = Dare.order('created_at').where(finished: false).all#, order: "created_at DESC", conditions: {finished: false})
-    render json: d
+    render json: d.as_json(:methods => :total_amount)
   end
   
 end
