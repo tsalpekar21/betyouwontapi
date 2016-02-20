@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true
 
   has_secure_password
-  has_many :dares, class_name: 'Dare', foreign_key: 'created_by'
+  has_many :dares
 
   def generate_token
     self.token = SecureRandom.hex
