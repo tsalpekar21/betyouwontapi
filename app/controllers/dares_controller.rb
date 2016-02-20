@@ -26,7 +26,7 @@ class DaresController < ApplicationController
   def finish
     d = Dare.find(params[:id])
     d.update_column(:finished, true)
-    render json: {status: :success, amount: "%05.2f" % d.payments.sum(:amount).to_f}
+    render json: {status: :success, amount: d.total_amount}
   end
 
   
