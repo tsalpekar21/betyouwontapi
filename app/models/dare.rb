@@ -3,6 +3,6 @@ class Dare < ActiveRecord::Base
   has_many :payments
 
   def total_amount
-    "%05.2f" % self.payments.sum(:amount).to_f  #String of amount with two decimal places
+    ActionController::Base.helpers.number_to_currency self.payments.sum(:amount).to_f  #String of amount with two decimal places
   end
 end
