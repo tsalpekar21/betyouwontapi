@@ -11,10 +11,9 @@ class DaresController < ApplicationController
     end
   end
 
-
   def show
     d = Dare.find(params[:id])
-    render json: d
+    render json: {dare: d, payments: d.payments}
   end
 
 

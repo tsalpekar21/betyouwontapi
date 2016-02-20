@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'users/get' => 'users#get'
   get 'users/payments' => 'users#payments'
 
-  post '/payments' => 'payments#create'
+  post '/payments/create' => 'payments#create'
 
   post 'dares/create' => 'dares#create'
   get 'dares/:id' => 'dares#show'
