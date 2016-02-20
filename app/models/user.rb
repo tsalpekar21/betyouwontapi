@@ -22,9 +22,9 @@ class User < ActiveRecord::Base
 
   def regenerate_auth_token
     begin
-      self.authentication_token = SecureRandom.hex
-    end while self.class.exists?(authentication_token: authentication_token)
-    authentication_token
+      self.token = SecureRandom.hex
+    end while self.class.exists?(token: token)
+    token
   end
 
 end

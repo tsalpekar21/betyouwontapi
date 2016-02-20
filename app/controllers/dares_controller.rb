@@ -7,7 +7,7 @@ class DaresController < ApplicationController
     if d
       render json: d
     else
-      render json: { status: 'it didnt work' }
+      render json: d.errors, status: 'it didnt work' 
     end
   end
 

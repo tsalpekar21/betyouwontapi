@@ -9,15 +9,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def get
-    render json: { bmax: 'BMAX IS A NIG' }
+  def show
+    render json: current_user
   end
 
   def payments
     if p = current_user.payments
       render json: p
     else 
-      render json: 'error', status: 'crap'
+      render json: p.errors, status: 'crap'
     end
   end
 
