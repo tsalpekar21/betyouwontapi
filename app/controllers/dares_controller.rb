@@ -1,9 +1,9 @@
 class DaresController < ApplicationController
-  before_action :authenticate, :except => :all
+  before_action :authenticate, :except => [:all]
 
   def create
     id = current_user.id
-    d = Dare.create(dare: params[:dare], user_id: id, description: params[:description])
+    d = Dare.create(dare: params[:dare], user_id: id, description: params[:description], location: params[:location])
     if d
       render json: d
     else
