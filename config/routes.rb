@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   post 'users/create' => 'users#create'
-  get 'users/get' => 'users#get'
+  get 'users/:id' => 'users#show'
   get 'users/payments' => 'users#payments'
 
   post '/payments/create' => 'payments#create'
