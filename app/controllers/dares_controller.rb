@@ -3,7 +3,7 @@ class DaresController < ApplicationController
 
   def create
     id = current_user.id
-    d = Dare.create(dare: params[:dare], created_by: id, description: params[:description])
+    d = Dare.create(dare: params[:dare], user_id: id, description: params[:description])
     if d
       render json: d
     else
