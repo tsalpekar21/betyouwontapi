@@ -5,6 +5,9 @@ gem 'rails', '4.2.1'
 
 gem 'rails-api'
 
+# has secure password
+gem 'bcrypt-ruby', '~> 3.1.2'
+
 gem 'spring', :group => :development
 
 
