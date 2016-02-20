@@ -16,6 +16,8 @@ gem 'active_model_serializers', github: "rails-api/active_model_serializers"
 
 gem 'pg'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 
 
 # To use ActiveModel has_secure_password
