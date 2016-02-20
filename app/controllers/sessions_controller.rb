@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
    if u && u.authenticate(params[:password])
      u.regenerate_auth_token
-     render json: u
+     render json: {email: u.email, token: u.token, name: u.name}
     else
       render json: {error: "Login credentials are invalid"}, status: :unauthorized
    end
