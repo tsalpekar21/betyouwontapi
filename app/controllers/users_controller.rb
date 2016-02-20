@@ -13,4 +13,12 @@ class UsersController < ApplicationController
     render json: { bmax: 'BMAX IS A NIG' }
   end
 
+  def payments
+    if p = current_user.payments
+      render json: p
+    else 
+      render json: 'error', status: 'crap'
+    end
+  end
+
 end
