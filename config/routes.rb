@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   post 'users/create' => 'users#create'
   get 'users/get' => 'users#get'
+  get 'users/payments' => 'users#payments'
+
+  post '/payments' => 'payments#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

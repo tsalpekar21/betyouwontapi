@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   before_create :generate_token
   before_save { email.downcase!}
+
+  has_many :payments
   
   validates :email, uniqueness: true
   validates :email, presence: true
