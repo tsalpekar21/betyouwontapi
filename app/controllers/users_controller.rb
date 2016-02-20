@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    render json: current_user
+    render json: current_user.as_json(include: :dares)
   end
 
   def payments
