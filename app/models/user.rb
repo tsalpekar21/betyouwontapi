@@ -16,10 +16,6 @@ class User < ActiveRecord::Base
     self.token = SecureRandom.hex
   end
 
-  def auth_token
-    authentication_token || regenerate_auth_token
-  end
-
   def regenerate_auth_token
     begin
       self.token = SecureRandom.hex
