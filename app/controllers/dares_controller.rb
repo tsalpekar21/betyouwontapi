@@ -1,5 +1,5 @@
 class DaresController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate, :except => :all
 
   def create
     id = current_user.id
